@@ -1,0 +1,11 @@
+source "https://rubygems.org"
+
+gem "chef"
+gem "rake"
+gem "inspec"
+gem "berkshelf"
+gem "kitchen-docker"
+gem "kitchen-ec2"
+gem "kitchen-inspec"
+gem "knife-ec2"
+gem "test-kitchen"
