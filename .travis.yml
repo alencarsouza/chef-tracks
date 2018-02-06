@@ -1,0 +1,14 @@
+sudo: required
+services: docker
+
+before_install: curl -L https://www.getchef.com/chef/install.sh | sudo bash
+
+branches:
+  only:
+    - master
+
+before_script:
+  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+
+script:
+  - kitchen verify
