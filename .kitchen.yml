@@ -1,0 +1,31 @@
+driver:
+  name: docker
+  use_sudo: false
+  privileged: true
+  provision_command:
+    - apt-get update
+    - apt-get install openssl apt-transport-https lsb-release procps net-tools -y
+
+provisioner:
+  name: chef_zero
+  cookbook_path: cookbooks
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: tracks
+    driver:
+      instance_name: tracks
+      hostname: tracks-app.dev
+      forward:
+        - 8080:80
+
+    run_list:
+      - recipe[tracks-app::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default/tracks-app_spec.rb
