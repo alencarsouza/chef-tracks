@@ -5,4 +5,5 @@ description 'Runs Tracks application'
 version '0.0.1'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
-
+depends 'apt'
+depends 'nginx'
