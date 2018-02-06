@@ -23,9 +23,10 @@ suites:
       hostname: tracks-app.dev
       forward:
         - 8080:80
+        - 3000:3000
 
     run_list:
-      - recipe[tracks-app::default]
+      - role[app]
     verifier:
       inspec_tests:
         - test/integration/default/tracks-app_spec.rb
