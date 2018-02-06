@@ -1,10 +1,8 @@
 #
-# Cookbook:: mariadb
-# Recipe:: default
+# Cookbook:: tracks-app
+# Recipe:: mariadb
 #
-# Copyright:: 2018, The Authors, All Rights Reserved.
-
-include_recipe "apt"
+# Copyright:: 2018, Alencar Junior, All Rights Reserved.
 
 apt_repository 'mariadb' do
   uri "http://ftp.hosteurope.de/mirror/mariadb.org/repo/10.2/#{node['platform']}"
