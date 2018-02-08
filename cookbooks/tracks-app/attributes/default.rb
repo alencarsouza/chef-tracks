@@ -1,6 +1,7 @@
 # deploy settings
 default['application']['app_repository'] = 'https://github.com/TracksApp/tracks.git'
 default['application']['app_branch']     = '2.3_branch'
+default['application']['app_name']       = 'tracks_app'
 default['application']['document_root']  = '/srv/www/tracks'
 default['application']['token']          = '456789435345879'
 
