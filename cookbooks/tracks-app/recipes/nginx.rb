@@ -4,6 +4,8 @@
 #
 # Copyright:: 2018, Alencar Junior, All Rights Reserved.
 
+document_root   = node['application']['document_root']
+
 execute 'remove_default_conf' do
   cwd '/etc/nginx/conf.d'
   command 'mv default.conf default.conf.sample'
@@ -22,6 +24,9 @@ template 'site.conf' do
   owner 'root'
   group 'root'
   mode  '0644'
+  variables(
+      document_root: document_root
+  )
   notifies :restart, 'service[nginx]'
 end
 
