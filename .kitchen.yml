@@ -4,7 +4,7 @@ driver:
   privileged: true
   provision_command:
     - apt-get update
-    - apt-get install openssl apt-transport-https lsb-release procps net-tools -y
+    - apt-get install vim openssl apt-transport-https lsb-release procps net-tools -y
 
 provisioner:
   name: chef_zero
