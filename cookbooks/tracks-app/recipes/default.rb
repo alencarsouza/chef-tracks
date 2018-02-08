@@ -2,8 +2,10 @@
 # Cookbook:: tracks-app
 # Recipe:: default
 #
-# Copyright:: 2018, The Authors, All Rights Reserved.
+# Copyright:: 2018, Alencar Junior, All Rights Reserved.
 
-include_recipe 'apt'
-include_recipe 'nginx'
-include_recipe 'tracks-app::install'
+include_recipe 'tracks-app::system'
+include_recipe 'tracks-app::postgresql'
+include_recipe 'tracks-app::nginx'
+include_recipe 'tracks-app::ruby'
+include_recipe 'tracks-app::application'
