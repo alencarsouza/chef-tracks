@@ -24,5 +24,3 @@ gem_package 'bundler' do
   gem_binary '/usr/bin/gem'
   action :upgrade
 end
-
-
