@@ -18,7 +18,7 @@ end
 
 template 'site.conf' do
   path '/etc/nginx/conf.d/site.conf'
-  source 'default/site.conf.erb'
+  source 'default/nginx.conf.erb'
   owner 'root'
   group 'root'
   mode  '0644'
