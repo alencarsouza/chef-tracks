@@ -16,7 +16,6 @@ database_username = node['postgresql']['database_username']
 database_password = node['postgresql']['database_password']
 timezone          = node['system']['timezone']
 
-
 # Clone TracksApp repository
 git document_root.to_s do
   repository app_repository

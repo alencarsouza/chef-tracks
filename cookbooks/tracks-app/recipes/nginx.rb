@@ -4,7 +4,7 @@
 #
 # Copyright:: 2018, Alencar Junior, All Rights Reserved.
 
-document_root   = node['application']['document_root']
+document_root = node['application']['document_root']
 
 execute 'remove_default_conf' do
   cwd '/etc/nginx/conf.d'
@@ -25,7 +25,7 @@ template 'site.conf' do
   group 'root'
   mode  '0644'
   variables(
-      document_root: document_root
+    document_root: document_root
   )
   notifies :restart, 'service[nginx]'
 end

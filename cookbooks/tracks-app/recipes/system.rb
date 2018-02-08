@@ -21,8 +21,6 @@ execute 'timezone_setup' do
 end
 
 execute 'install_english_locale' do
-  command "locale-gen en_US.UTF-8 && locale-gen en_US && locale-gen"
+  command 'locale-gen en_US.UTF-8 && locale-gen en_US && locale-gen'
   user 'root'
 end
-
-
