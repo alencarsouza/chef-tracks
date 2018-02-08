@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# exit on errors
+set -eu
+
+LOG_DIR=/var/log/<%= @app_name %>
+USER=root
+GROUP=root
+
+exec /usr/bin/chpst -u ${USER} /usr/bin/svlogd -tt ${LOG_DIR}
