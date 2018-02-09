@@ -42,15 +42,18 @@ template "/etc/sv/#{app_name}/log/run" do
   )
 end
 
-execute 'make_this_script_executable' do
-  cwd '/etc/sv'
-  command "chmod +x #{app_name}/run && chmod +x #{app_name}/log/run"
-  user 'root'
-end
-
 # make a symbolic link between runit folder and upstart folder
 link "/etc/service/#{app_name}" do
   to "/etc/sv/#{app_name}"
   link_type :symbolic
   action :create
 end
+
+# workaround to start the service
+execute 'start_service' do
+  command "runsv /etc/service/#{app_name} &"
+  user 'root'
+end
+
+
+

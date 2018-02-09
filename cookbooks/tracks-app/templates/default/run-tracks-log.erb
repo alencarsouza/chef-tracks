@@ -5,6 +5,6 @@ set -eu
 
 LOG_DIR=/var/log/<%= @app_name %>
 USER=root
-GROUP=root
+GROUP=adm
 
-exec /usr/bin/chpst -u ${USER} /usr/bin/svlogd -tt ${LOG_DIR}
+exec /usr/bin/chpst -u ${USER}:${GROUP} /usr/bin/svlogd -tt ${LOG_DIR}

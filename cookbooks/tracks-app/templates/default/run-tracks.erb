@@ -3,14 +3,14 @@
 # exit on errors
 set -eu
 
-exec 2>&1
+
 
 APPLICATION_ROOT=<%= @document_root %>
 DAEMON="<%= @runit_command %>"
 
 cd $APPLICATION_ROOT
 
-exec ${DAEMON}
+exec ${DAEMON} 2>&1
 
 
 
